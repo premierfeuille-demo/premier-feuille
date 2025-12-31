@@ -1,0 +1,153 @@
+/* =========================
+   Header (final / no-drawer)
+   ========================= */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245,247,248,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .header-inner{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding-block: 10px;
+}
+
+/* ロゴ */
+.site-header .site-mark{
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.site-header .site-mark img{
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  display: block;
+}
+
+/* PCナビ（PCではヘッダー内に表示） */
+.site-header .site-nav{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin-left: 10px;
+}
+
+.site-header .site-nav a{
+  font-family: var(--font-en);
+  font-weight: 500;
+  letter-spacing: .02em;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.site-header .site-nav a:hover{
+  background: rgba(26,43,60,.06);
+  text-decoration:none;
+}
+
+/* 右上 */
+.site-header .site-util{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+/* =========================
+   SP Subnav (default hidden)
+   ========================= */
+.sp-subnav{
+  display:none;
+}
+
+
+/* =========================
+   SP (<=720px)
+   ========================= */
+@media (max-width: 720px){
+
+  /* 上段：ロゴ中央＋右にutil（導線を固定） */
+  .site-header .header-inner{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    gap: 10px;
+    padding-block: 12px;
+  }
+
+  .site-header .site-mark{
+    justify-self: center;
+    line-height: 0;
+  }
+
+  .site-header .site-mark img{
+    max-height: 56px;
+    width: auto;
+    max-width: 210px;
+    object-fit: contain;
+  }
+
+  .site-header .site-util{
+    margin-left: 0;
+    justify-self: end;
+    white-space: nowrap;
+  }
+
+  .site-header .site-util a{
+    font-size: 13px;
+    padding: 6px 6px;
+  }
+
+  /* SPではヘッダー内カテゴリは使わない（下段に固定するため） */
+  .site-header .site-nav{
+    display:none;
+  }
+
+  /* 下段：カテゴリを常時表示 */
+  .sp-subnav{
+    display:block;
+    position: sticky;
+    top: 72px; /* ヘッダー高さに合わせて調整（ロゴ高さ56px + padding等の概算） */
+    z-index: 49;
+    background: rgba(245,247,248,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sp-subnav-inner{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .sp-subnav a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height: 40px;
+    border-radius: 12px;
+    font-family: var(--font-en);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .02em;
+    text-decoration:none;
+    color: var(--ink, #1A2B3C);
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(26,43,60,.10);
+  }
+
+  .sp-subnav a:hover{
+    background: rgba(26,43,60,.06);
+    text-decoration:none;
+  }
+}
