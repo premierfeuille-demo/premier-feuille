@@ -102,27 +102,28 @@
 
 @media (max-width: 720px){
 
-  /* ヘッダー：ロゴ中央＋右に util */
+  /* PCナビは隠す（カテゴリは sp-subnav に任せる） */
+  .site-header .site-nav{ display:none; }
+
+  /* SPヘッダー：左右に“同じ余白列”を作ってロゴを真ん中へ */
   .site-header .header-inner{
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto 1fr; /* 左余白 / ロゴ / 右(util) */
     align-items: center;
     gap: 12px;
     padding-block: 14px;
   }
 
-  /* PCナビは隠す（カテゴリは sp-subnav に任せる） */
-  .site-header .site-nav{
-    display: none;
-  }
-
-  /* ロゴ中央 */
+  /* ロゴを中央列に固定 */
   .site-header .site-mark{
+    grid-column: 2;
     justify-self: center;
+    line-height: 0;
   }
 
-  /* util右寄せ */
+  /* utilを右列に固定 */
   .site-header .site-util{
+    grid-column: 3;
     justify-self: end;
     margin-left: 0;
     white-space: nowrap;
@@ -134,7 +135,7 @@
   }
 
   /* SPカテゴリバーを表示 */
-  .sp-subnav{
-    display: block;
-  }
+  .sp-subnav{ display:block; }
+}
+
 }
