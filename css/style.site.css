@@ -317,6 +317,11 @@ main{ padding: 18px 0 34px; }
   margin-top: 26px;
   padding: 22px 0 34px;
   border-top: 1px solid var(--border);
+
+}
+.site-footer a,
+.site-footer a:visited {
+  color: var(--text);
 }
 
 .footer-links{
