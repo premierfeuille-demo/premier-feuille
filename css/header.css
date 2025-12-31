@@ -22,12 +22,14 @@
 .site-header .site-mark{
   flex: 0 0 auto;
   line-height: 0;
+  min-width: 0; /* safety */
 }
 
 .site-header .site-mark img{
   height: 56px;
   width: auto;
   max-width: 220px;
+  display: block;
 }
 
 /* PCナビ（カテゴリ） */
@@ -57,6 +59,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .site-header .site-util a{
@@ -102,36 +105,31 @@
 
 @media (max-width: 720px){
 
-  /* ヘッダーは2カラムに戻す：左(ロゴ) / 右(util) */
-  .site-header .header-inner{
-    display: flex;
-    align-items: flex-start;   /* ← 少し上寄せ */
-    gap: 12px;
-    padding-block: 12px;       /* 上下を少し詰める */
-  }
-
-  /* PCナビは隠す */
+  /* PCナビは隠す（カテゴリはsp-subnavで常時表示） */
   .site-header .site-nav{ display:none; }
 
-  /* ロゴ：左寄せ + 少し上 */
-  .site-header .site-mark{
-    margin-right: auto;        /* 左固定 */
-    transform: translateY(-2px); /* ← “やや上” */
-    line-height: 0;
+  /* SPヘッダー：左ロゴ + 右util / “やや上”はpaddingで作る（安定） */
+  .site-header .header-inner{
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 10px;   /* ← “やや上” */
+    padding-bottom: 12px;
   }
 
-  /* ロゴサイズ：小型で暴れないように上限 */
+  /* ロゴ：左固定（flexなのでこれで安定） */
+  .site-header .site-mark{
+    margin-right: auto;
+  }
+
+  /* ロゴサイズ：小型で暴れないように */
   .site-header .site-mark img{
     height: 52px;
     max-width: 190px;
-    width: auto;
-    display: block;
   }
 
   /* util：右寄せ */
   .site-header .site-util{
     margin-left: auto;
-    white-space: nowrap;
     align-items: center;
   }
 
@@ -140,6 +138,6 @@
     padding: 6px 6px;
   }
 
-  /* SPカテゴリバーは表示 */
+  /* SPカテゴリバー表示 */
   .sp-subnav{ display:block; }
 }
