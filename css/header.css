@@ -137,4 +137,34 @@
     font-size: 12px;
     padding: 4px 4px;
   }
+
+  /* =========================================================
+   LOGO SWITCH (hard override)
+   ========================================================= */
+
+/* 2枚とも一旦非表示にして、欲しい方だけ表示する */
+.site-header .site-mark img{ display:none !important; }
+
+/* PCではPCロゴだけ */
+.site-header .site-mark img.logo-pc{ display:block !important; }
+
+/* SPではSPロゴだけ */
+@media (max-width: 720px){
+  .site-header .site-mark img.logo-pc{ display:none !important; }
+  .site-header .site-mark img.logo-sp{ display:block !important; }
 }
+
+/* サイズ（潰れ防止） */
+.site-header .site-mark img{
+  width: auto !important;
+  height: 56px;
+  max-width: 220px;
+}
+
+@media (max-width: 720px){
+  .site-header .site-mark img{
+    height: 34px;
+    max-width: 140px;
+  }
+}
+ 
