@@ -14,66 +14,44 @@
 
   <!-- Site CSS -->
   <link rel="stylesheet" href="./css/style.site.css">
-　<link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body>
 
+  <!-- Header（これ1回だけ） -->
+  <header class="site-header">
+    <div class="wrap header-inner">
 
+      <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
+        <img class="logo-pc" src="/premier-feuille/images/logo-pc.png" alt="PREMIER FEUILLE">
+        <img class="logo-sp" src="/premier-feuille/images/logo-sp.png" alt="PREMIER FEUILLE">
+      </a>
 
-<!-- SP用：カテゴリ常時表示（header直下） -->
-<nav class="sp-subnav" aria-label="スマホ用カテゴリ">
-  <div class="wrap sp-subnav-inner">
-    <a href="/premier-feuille/about/">ABOUT</a>
-    <a href="/premier-feuille/news/">NEWS</a>
-    <a href="/premier-feuille/shopping/">SHOPPING</a>
-    <a href="/premier-feuille/shopping/gift/">GIFT</a>
-  </div>
-</nav>
-  
-<header class="site-header">
-  <div class="wrap header-inner">
+      <nav class="site-nav" aria-label="ナビゲーション">
+        <a href="/premier-feuille/about/">ABOUT</a>
+        <a href="/premier-feuille/news/">NEWS</a>
+        <a href="/premier-feuille/shopping/">SHOPPING</a>
+        <a href="/premier-feuille/shopping/gift/">GIFT</a>
+      </nav>
 
-    <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
-      <img class="logo-pc" src="/premier-feuille/images/logo-pc.png" alt="PREMIER FEUILLE">
-      <img class="logo-sp" src="/premier-feuille/images/logo-sp.png" alt="PREMIER FEUILLE">
-    </a>
+      <nav class="site-util" aria-label="ユーザーメニュー">
+        <a href="/premier-feuille/account/login.html">ログイン</a>
+        <a href="/premier-feuille/cart/">カート</a>
+      </nav>
 
-    <nav class="site-nav" aria-label="ナビゲーション">
-      <a href="/premier-feuille/about/">ABOUT</a>
-      <a href="/premier-feuille/news/">NEWS</a>
-      <a href="/premier-feuille/shopping/">SHOPPING</a>
-      <a href="/premier-feuille/shopping/gift/">GIFT</a>
-    </nav>
-
-    <nav class="site-util" aria-label="ユーザーメニュー">
-      <a href="/premier-feuille/account/login.html">ログイン</a>
-      <a href="/premier-feuille/cart/">カート</a>
-    </nav>
-
-  </div>
-
-  <!-- SPカテゴリ常時表示：headerの中（これ1回だけ） -->
-  <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
-    <div class="wrap sp-subnav-inner">
-      <a href="/premier-feuille/about/">ABOUT</a>
-      <a href="/premier-feuille/news/">NEWS</a>
-      <a href="/premier-feuille/shopping/">SHOPPING</a>
-      <a href="/premier-feuille/shopping/gift/">GIFT</a>
     </div>
-  </nav>
-</header>
 
-
-  <!-- SP用：カテゴリ常時表示（header直下） -->
-  <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
-    <div class="wrap sp-subnav-inner">
-      <a href="/premier-feuille/about/">ABOUT</a>
-      <a href="/premier-feuille/news/">NEWS</a>
-      <a href="/premier-feuille/shopping/">SHOPPING</a>
-      <a href="/premier-feuille/shopping/gift/">GIFT</a>
-    </div>
-  </nav>
+    <!-- SPカテゴリ常時表示（header内：これ1回だけ） -->
+    <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
+      <div class="wrap sp-subnav-inner">
+        <a href="/premier-feuille/about/">ABOUT</a>
+        <a href="/premier-feuille/news/">NEWS</a>
+        <a href="/premier-feuille/shopping/">SHOPPING</a>
+        <a href="/premier-feuille/shopping/gift/">GIFT</a>
+      </div>
+    </nav>
+  </header>
 
 
   <main>
@@ -109,20 +87,17 @@
         <div class="hero-media-inner">
 
           <figure class="hero-media-figure">
-            <img src="/premier-feuille/images/hero.jpg"
-                 alt="紅茶のイメージ">
+            <img src="/premier-feuille/images/hero.jpg" alt="紅茶のイメージ">
           </figure>
 
           <p class="hero-media-lead">季節に合わせたおすすめや、香り別の選び方をご案内しています。</p>
 
-          <a class="btn primary hero-media-cta"
-             href="/premier-feuille/shopping/">
+          <a class="btn primary hero-media-cta" href="/premier-feuille/shopping/">
             商品を見る
           </a>
 
         </div>
       </section>
-
 
       <!-- NEWS -->
       <section class="section" aria-label="NEWS">
@@ -147,7 +122,6 @@
 
         </div>
       </section>
-
 
       <!-- CATEGORY -->
       <section class="section" aria-label="カテゴリ">
