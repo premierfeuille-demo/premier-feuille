@@ -17,49 +17,45 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-  <!-- ハンバーガーメニュー用ヘッダー -->
-<header class="drawer-header">
+ <!-- Header -->
+<header class="site-header">
 
-  <a href="/premier-feuille/index.html"
-     class="site-mark"
-     aria-label="トップへ戻る">
-    <img src="/premier-feuille/images/logo-mark.png"
-         alt="PREMIER FEUILLE">
-  </a>
+  <!-- ハンバーガーメニュー用ヘッダー（空でOK：CSS/JS制御用） -->
+  <div class="drawer-header">
+    <!-- 今は中身なしでOK -->
+  </div>
 
-  <button class="drawer-close"
-          aria-label="メニューを閉じる">
-    ×
-  </button>
+  <div class="wrap header-inner">
 
+    <button class="menu-toggle"
+            aria-label="メニューを開く"
+            type="button">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- 通常ヘッダー用ロゴ（これ1つだけ） -->
+    <a href="/premier-feuille/index.html"
+       class="site-mark"
+       aria-label="トップへ戻る">
+      <img src="/premier-feuille/images/logo-mark.png"
+           alt="PREMIER FEUILLE">
+    </a>
+
+    <nav class="site-nav" aria-label="ナビゲーション">
+      <a href="/premier-feuille/about/">ABOUT</a>
+      <a href="/premier-feuille/news/">NEWS</a>
+      <a href="/premier-feuille/shopping/">SHOPPING</a>
+      <a href="/premier-feuille/shopping/gift/">GIFT</a>
+    </nav>
+
+    <nav class="site-util" aria-label="ユーザーメニュー">
+      <a href="/premier-feuille/account/login.html">ログイン</a>
+      <a href="/premier-feuille/cart/">カート</a>
+    </nav>
+
+  </div>
 </header>
 
-    <div class="wrap header-inner">
-
-      <button class="menu-toggle" aria-label="メニューを開く" type="button">
-        <span></span><span></span><span></span>
-      </button>
-
-      <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
-        <img src="/premier-feuille/images/logo-mark.png" alt="...">
-      </a>
-
-      <nav class="site-nav" aria-label="ナビゲーション">
-        <a href="/premier-feuille/about/">ABOUT</a>
-        <a href="/premier-feuille/news/">NEWS</a>
-        <a href="/premier-feuille/shopping/">SHOPPING</a>
-        <a href="/premier-feuille/shopping/gift/">GIFT</a>
-      </nav>
-
-      <nav class="site-util" aria-label="ユーザーメニュー">
-        <a href="/premier-feuille/account/login.html">ログイン</a>
-        <a href="/premier-feuille/cart/">カート</a>
-      </nav>
-
-    </div>
-  </header>
   
  <!-- Mobile Menu (overlay + panel) -->
 <div class="mobile-overlay" hidden></div>
@@ -115,7 +111,6 @@
       <section class="hero-media" aria-label="イメージ">
         <div class="hero-media-inner">
           <figure class="hero-media-figure">
-            <img src="/premier-feuille/images/hero.jpg"> alt="紅茶のイメージ写真">
           </figure>
 
           <p class="hero-media-lead">

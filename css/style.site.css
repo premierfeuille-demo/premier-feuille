@@ -571,14 +571,6 @@ a.btn.primary.hero-media-cta{
     background: var(--ink, #1A2B3C);
   }
 
-  /* ロゴ中央 */
-  .site-mark{
-    position:absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 55;
-  }
   
   .site-mark img{
   display: block;
@@ -608,8 +600,7 @@ site-mark{
    MOBILE MENU (overlay + panel)
    ========================================================= */
 
-/* hidden属性は必ず非表示（JSが hidden をON/OFF） */
-[hidden]{ display:none !important; }
+
 
 /* 背景暗幕 */
 .mobile-overlay{
@@ -635,20 +626,7 @@ site-mark{
 }
 .mobile-nav.is-open{ transform: translateX(0); }
 
-/* close button */
-.mobile-close{
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid rgba(26,43,60,.12);
-  background: #fff;
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
-}
+
 
 /* menu logo */
 .mobile-logo{
@@ -685,35 +663,10 @@ site-mark{
   border-radius: 10px;
 }
 
-
 /* =========================================================
    HOTFIX v3 (force opaque mobile menu on all browsers)
    ========================================================= */
-.mobile-overlay{
-  background: rgba(0,0,0,.35) !important;
-  pointer-events: auto;
-}
-
-.mobile-nav{
-  /* force full-screen covering */
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100dvh !important; /* modern iOS */
-  min-height: 100vh !important;
-
-  /* force opaque background */
-  background: #F5F7F8 !important;
-  backdrop-filter: none !important;
-}
-
-/* if any old rule gave it rounding/margins, kill them */
-.mobile-nav{
-  margin: 0 !important;
-  border-radius: 0 !important;
-}
+.
 
 .menu-toggle{ display:none; } /* デフォルト(PC)は非表示 */
 
@@ -724,19 +677,6 @@ site-mark{
 
 .menu-toggle span{ flex: 0 0 auto; }
 
-/* ===== FIX: mobile menu内のロゴだけ absolute解除 ===== */
-@media (max-width: 720px){
-  .mobile-logo .site-mark{
-    position: static !important;
-    transform: none !important;
-    left: auto !important;
-    top: auto !important;
-    z-index: auto !important;
-  }
-  .mobile-logo{
-    justify-content: center;
-  }
-}
 
 /* ===== Category cards: “見る”を押せるUIにする ===== */
 .category-grid .card a{
@@ -812,19 +752,7 @@ site-mark{
    DESKTOP SAFETY NET (>=721px)
    PCではモバイル要素を完全に無効化してヘッダー崩れを防ぐ
    ========================================================= */
-@media (min-width: 721px){
-  .menu-toggle{ display:none !important; }
-  .mobile-overlay,
-  .mobile-nav{ display:none !important; }
 
-  /* モバイルでロゴをabsolute中央寄せしている場合の巻き添え防止 */
-  .site-mark{
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-  }
-}
 
 /* カード全体リンク（a.card）前提 */
 .grid a.card{
@@ -885,16 +813,24 @@ site-mark{
 }
 
 .drawer-header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 18px;
+  position: relative;   /* ← 基準点 */
 }
 
 .drawer-close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(26,43,60,.12);
+  background: #fff;
+
   font-size: 24px;
   line-height: 1;
-  background: none;
-  border: none;
   cursor: pointer;
+  z-index: 1001;
 }
+
+
