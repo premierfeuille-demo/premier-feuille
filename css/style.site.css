@@ -579,13 +579,18 @@ a.btn.primary.hero-media-cta{
     transform: translate(-50%, -50%);
     z-index: 55;
   }
+  
   .site-mark img{
-    height: 56px;
-    width: auto;
-    max-width: 210px;
-    object-fit: contain;
-  }
-
+  display: block;
+  max-height: 56px;   /* 高さの上限にする */
+  width: auto;
+  max-width: 210px;
+  object-fit: contain;
+}
+.
+site-mark{
+  line-height: 0;
+}
   /* 右側：ログイン/カート */
   .site-util{
     margin-left:auto;
@@ -879,13 +884,3 @@ a.btn.primary.hero-media-cta{
   border-radius: var(--radius-sm);
 }
 
-/* ハンバーガーメニュー内ロゴの強制可視化 */
-.site-mark img{
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  position: relative;
-  z-index: 9999;
-  max-width: 120px;
-  height: auto;
-}
