@@ -1,6 +1,6 @@
-/* =========================================================
-   HEADER (PC / SP 共通)
-   ========================================================= */
+/* =========================
+   HEADER common
+   ========================= */
 
 .site-header{
   position: sticky;
@@ -12,35 +12,34 @@
 }
 
 .site-header .header-inner{
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
   gap: 16px;
   padding-block: 12px;
 }
 
-/* ロゴ（2枚内包して切替） */
+/* ロゴ：2枚入れて切替 */
 .site-header .site-mark{
   flex: 0 0 auto;
   line-height: 0;
-  display: block;
+  display:block;
+  min-width: 0;
 }
 
-/* 画像の共通ルール */
+/* ★潰れ防止の核：幅はautoを強制（他CSSに勝つ） */
 .site-header .site-mark img{
-  display: block;
-  width: auto;
-  height: 56px;      /* PC基準 */
-  max-width: 220px;  /* 念のため */
+  display:block;
+  height: 56px;
+  width: auto !important;
+  max-width: 220px;
 }
 
-/* デフォルトはPC用を表示 */
-.site-header .site-mark .logo-pc{ display: block; }
-.site-header .site-mark .logo-sp{ display: none; }
+.site-header .logo-pc{ display:block; }
+.site-header .logo-sp{ display:none; }
 
-/* PCナビ */
 .site-header .site-nav{
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
   gap: 14px;
   margin-left: 12px;
 }
@@ -58,38 +57,33 @@
   text-decoration: none;
 }
 
-/* 右上（ログイン/カート） */
 .site-header .site-util{
-  margin-left: auto;
-  display: flex;
-  align-items: center;
+  margin-left:auto;
+  display:flex;
+  align-items:center;
   gap: 10px;
   white-space: nowrap;
 }
 
-.site-header .site-util a{
-  font-size: 14px;
-}
-
-/* =========================================================
-   SP用 カテゴリ常時表示バー（header直下）
-   ========================================================= */
+/* =========================
+   SP subnav bar
+   ========================= */
 
 .sp-subnav{
-  display: none; /* PCでは非表示 */
+  display:none;
   background: rgba(245,247,248,.96);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
 
 .sp-subnav-inner{
-  display: flex;
+  display:flex;
   justify-content: space-between;
   gap: 6px;
 }
 
 .sp-subnav a{
-  flex: 1;
-  text-align: center;
+  flex:1;
+  text-align:center;
   font-size: 13px;
   padding: 10px 4px;
   font-family: var(--font-en);
@@ -97,43 +91,38 @@
   white-space: nowrap;
 }
 
-.sp-subnav a:hover{
-  background: rgba(26,43,60,.06);
-  text-decoration: none;
-}
-
-/* =========================================================
-   RESPONSIVE (<=720px)
-   ========================================================= */
+/* =========================
+   Responsive
+   ========================= */
 
 @media (max-width: 720px){
 
-  /* PCナビは隠す（カテゴリは sp-subnav） */
-  .site-header .site-nav{ display: none; }
-  .sp-subnav{ display: block; }
+  /* ★二重防止：PCナビは必ず消す */
+  .site-header .site-nav{ display:none; }
 
-  /* ヘッダー：左上寄せ気味にする（必要なら微調整） */
+  /* SPカテゴリバーを出す */
+  .sp-subnav{ display:block; }
+
+  /* ロゴはSP用に切替 */
+  .site-header .logo-pc{ display:none; }
+  .site-header .logo-sp{ display:block; }
+
+  /* ロゴを左上・小さく（SP） */
   .site-header .header-inner{
-    align-items: flex-start;
-    gap: 10px;
+    align-items:flex-start;
     padding-top: 4px;
     padding-bottom: 8px;
+    gap: 10px;
   }
 
-  /* ロゴ切替：SP用を表示 */
-  .site-header .site-mark .logo-pc{ display: none; }
-  .site-header .site-mark .logo-sp{ display: block; }
-
-  /* SP用ロゴサイズ（ここが一番効く） */
   .site-header .site-mark img{
-    height: 34px;      /* 好みで 32〜40 */
-    max-width: 140px;  /* 好みで調整 */
+    height: 34px;
+    width: auto !important;
+    max-width: 140px;
   }
 
-  /* utilを右上に */
   .site-header .site-util{
-    margin-left: auto;
-    align-items: flex-start;
+    align-items:flex-start;
     gap: 8px;
   }
 
@@ -141,4 +130,10 @@
     font-size: 12px;
     padding: 4px 4px;
   }
+}
+
+/* ★保険：狭いPC/タブレットでも切れない（任意） */
+@media (max-width: 980px){
+  .site-header .site-nav{ display:none; }
+  .sp-subnav{ display:block; }
 }
