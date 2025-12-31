@@ -1,0 +1,103 @@
+/* シーン別ページ：サブラベル */
+.sub-label{
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Janat ハブ専用：2カラム */
+.grid-2{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* PCで横にゆったり見せたい場合（任意） */
+@media (min-width: 960px){
+  .grid-2{
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* Janat ハブ：トップと同じ白カードに */
+.hub-janat .card{
+  background: var(--card);
+}
+
+/* Janat ハブ：導入文は基本左寄せ */
+.hub-janat > p,
+.hub-janat .sub-label{
+  text-align: left;
+  max-width: 42rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* スマホでは中央寄せ */
+@media (max-width: 720px){
+  .hub-janat > p,
+  .hub-janat .sub-label{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hub-janat{
+  padding-bottom: 80px;
+}
+
+/* Janatハブ：2枚カードをPCでも綺麗に */
+.grid-2{
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 960px){
+  .grid-2{
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* Janatハブ：導入文と補足文の整列（PC左寄せ・スマホ中央） */
+.hub-janat > p,
+.hub-janat .sub-label{
+  max-width: 42rem;
+}
+@media (max-width: 720px){
+  .hub-janat > p,
+  .hub-janat .sub-label{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Janatハブ：フッターとの間に確実な余白（これで必ず変わる） */
+.hub-janat{
+  padding-bottom: 38px;
+}
+
+/* シーンショートカット（4つ並べたい場合） */
+.grid-4{
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 960px){
+  .grid-4{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 形状切替ナビ（最低限） */
+.sub-nav{
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 14px;
+  flex-wrap: wrap;
+}
+.sub-nav a{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.sub-nav a.is-active{
+  font-weight: 700;
+}
