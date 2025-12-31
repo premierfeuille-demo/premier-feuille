@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    HEADER common
-   ========================= */
+   ========================================================= */
 
 .site-header{
   position: sticky;
@@ -18,7 +18,7 @@
   padding-block: 12px;
 }
 
-/* ロゴ：2枚入れて切替 */
+/* ロゴ（2枚） */
 .site-header .site-mark{
   flex: 0 0 auto;
   line-height: 0;
@@ -26,7 +26,7 @@
   min-width: 0;
 }
 
-/* ★潰れ防止の核：幅はautoを強制（他CSSに勝つ） */
+/* ★潰れ防止：他のCSSがwidth:100%を当てても勝つ */
 .site-header .site-mark img{
   display:block;
   height: 56px;
@@ -34,9 +34,11 @@
   max-width: 220px;
 }
 
+/* デフォルトはPCロゴ */
 .site-header .logo-pc{ display:block; }
 .site-header .logo-sp{ display:none; }
 
+/* PCナビ */
 .site-header .site-nav{
   display:flex;
   align-items:center;
@@ -57,6 +59,7 @@
   text-decoration: none;
 }
 
+/* util */
 .site-header .site-util{
   margin-left:auto;
   display:flex;
@@ -65,9 +68,9 @@
   white-space: nowrap;
 }
 
-/* =========================
-   SP subnav bar
-   ========================= */
+/* =========================================================
+   SP subnav
+   ========================================================= */
 
 .sp-subnav{
   display:none;
@@ -91,23 +94,26 @@
   white-space: nowrap;
 }
 
-/* =========================
-   Responsive
-   ========================= */
+.sp-subnav a:hover{
+  background: rgba(26,43,60,.06);
+  text-decoration: none;
+}
+
+/* =========================================================
+   Responsive (<=720px)
+   ========================================================= */
 
 @media (max-width: 720px){
 
-  /* ★二重防止：PCナビは必ず消す */
+  /* PCナビは隠す／SPバーを出す */
   .site-header .site-nav{ display:none; }
-
-  /* SPカテゴリバーを出す */
   .sp-subnav{ display:block; }
 
-  /* ロゴはSP用に切替 */
+  /* ロゴ切替 */
   .site-header .logo-pc{ display:none; }
   .site-header .logo-sp{ display:block; }
 
-  /* ロゴを左上・小さく（SP） */
+  /* SPヘッダー：左上寄せ気味 */
   .site-header .header-inner{
     align-items:flex-start;
     padding-top: 4px;
@@ -115,6 +121,7 @@
     gap: 10px;
   }
 
+  /* SPロゴ：小さく、潰れない */
   .site-header .site-mark img{
     height: 34px;
     width: auto !important;
@@ -130,10 +137,4 @@
     font-size: 12px;
     padding: 4px 4px;
   }
-}
-
-/* ★保険：狭いPC/タブレットでも切れない（任意） */
-@media (max-width: 980px){
-  .site-header .site-nav{ display:none; }
-  .sp-subnav{ display:block; }
 }
