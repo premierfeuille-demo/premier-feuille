@@ -884,3 +884,17 @@ site-mark{
   border-radius: var(--radius-sm);
 }
 
+.drawer-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+}
+
+.drawer-close{
+  font-size: 24px;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
