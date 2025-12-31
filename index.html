@@ -19,39 +19,7 @@
 
 <body>
 
-  <!-- Header -->
-<header class="site-header">
-  <div class="wrap header-inner">
 
-    <!-- ロゴ（PC/SPで出し分け） -->
-    <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
-      <!-- PC用ロゴ -->
-      <img class="logo-pc"
-           src="/premier-feuille/images/logo-pc.png"
-           alt="PREMIER FEUILLE">
-
-      <!-- スマホ用ロゴ -->
-      <img class="logo-sp"
-           src="/premier-feuille/images/logo-sp.png"
-           alt="PREMIER FEUILLE">
-    </a>
-
-    <!-- PCナビ -->
-    <nav class="site-nav" aria-label="ナビゲーション">
-      <a href="/premier-feuille/about/">ABOUT</a>
-      <a href="/premier-feuille/news/">NEWS</a>
-      <a href="/premier-feuille/shopping/">SHOPPING</a>
-      <a href="/premier-feuille/shopping/gift/">GIFT</a>
-    </nav>
-
-    <!-- 右上（ログイン/カート） -->
-    <nav class="site-util" aria-label="ユーザーメニュー">
-      <a href="/premier-feuille/account/login.html">ログイン</a>
-      <a href="/premier-feuille/cart/">カート</a>
-    </nav>
-
-  </div>
-</header>
 
 <!-- SP用：カテゴリ常時表示（header直下） -->
 <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
@@ -62,6 +30,39 @@
     <a href="/premier-feuille/shopping/gift/">GIFT</a>
   </div>
 </nav>
+  
+<header class="site-header">
+  <div class="wrap header-inner">
+
+    <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
+      <img class="logo-pc" src="/premier-feuille/images/logo-pc.png" alt="PREMIER FEUILLE">
+      <img class="logo-sp" src="/premier-feuille/images/logo-sp.png" alt="PREMIER FEUILLE">
+    </a>
+
+    <nav class="site-nav" aria-label="ナビゲーション">
+      <a href="/premier-feuille/about/">ABOUT</a>
+      <a href="/premier-feuille/news/">NEWS</a>
+      <a href="/premier-feuille/shopping/">SHOPPING</a>
+      <a href="/premier-feuille/shopping/gift/">GIFT</a>
+    </nav>
+
+    <nav class="site-util" aria-label="ユーザーメニュー">
+      <a href="/premier-feuille/account/login.html">ログイン</a>
+      <a href="/premier-feuille/cart/">カート</a>
+    </nav>
+
+  </div>
+
+  <!-- SPカテゴリ常時表示：headerの中（これ1回だけ） -->
+  <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
+    <div class="wrap sp-subnav-inner">
+      <a href="/premier-feuille/about/">ABOUT</a>
+      <a href="/premier-feuille/news/">NEWS</a>
+      <a href="/premier-feuille/shopping/">SHOPPING</a>
+      <a href="/premier-feuille/shopping/gift/">GIFT</a>
+    </div>
+  </nav>
+</header>
 
 
   <!-- SP用：カテゴリ常時表示（header直下） -->
