@@ -113,12 +113,11 @@ a:hover{ text-decoration: underline; }
 main{ padding: 18px 0 34px; }
 
 /* Hero */
-/*.hero{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 26px 22px;
+.hero{
+  background-image: url("/premier-feuille/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
 }
 
 .brand-block{ display:flex; flex-direction:column; gap: 6px; margin-bottom: 12px; }
