@@ -129,8 +129,8 @@
 
   /* ★ロゴを小さく（見た目が落ち着く） */
   .site-header .site-mark img{
-    height: 42px;         /* ← 52px → 42px（好みで40〜46） */
-    max-width: 160px;     /* ← 190px → 160px */
+    height: 36px;         /* ← 52px → 42px（好みで40〜46） */
+    max-width: 140px;     /* ← 190px → 160px */
     width: auto;
     display: block;
   }
