@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="./css/style.site.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -44,24 +44,22 @@
     </div>
   </header>
   
- <!-- Mobile Menu (overlay + panel) -->
-<div class="mobile-overlay" hidden></div>
+  <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+  <button class="menu-close" type="button" aria-label="メニューを閉じる">×</button>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション" hidden>
-  <button class="mobile-close" type="button" aria-label="メニューを閉じる">×</button>
-
-  <div class="mobile-logo">
-    <img src="./images/logo-mark.png" alt="Premier Feuille">
-  </div>
+  <a class="mobile-nav-brand" href="/">
+    <img src="/images/logo-mark.png" alt="Premier Feuille">
+  </a>
 
   <a href="/about/">ABOUT</a>
   <a href="/news/">NEWS</a>
   <a href="/shopping/">SHOPPING</a>
   <a href="/shopping/gift/">GIFT</a>
+
   <a href="/account/login.html">ログイン</a>
   <a href="/cart/">カート</a>
 </nav>
- 
+
 
   <!-- Main -->
   <main>
@@ -136,39 +134,41 @@
 
         <!-- Categories -->
         <section class="section" aria-label="商品カテゴリ">
-  <h2 class="section-title">カテゴリ</h2>
+          <h2 class="section-title">カテゴリ</h2>
 
-  <div class="grid">
-    <a class="card" href="./shopping/janat/">
-      <div>
-        <h3>Janat（ジャンナッツ）</h3>
-        <p>ジャンナッツのフレーバーティーを、シーン別に選びやすく。</p>
-      </div>
-    </a>
+          <div class="grid">
+            <a class="card" href="./shopping/janat/">
+              <div>
+                <h3>Janat（ジャンナッツ）</h3>
+                <p>ジャンナッツのフレーバーティーを、シーン別に選びやすく。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/original/">
-      <div>
-        <h3>プルミフィーユ オリジナルブレンド</h3>
-        <p>香り・味わい・余韻の調和を大切に、当店が設計したオリジナルブレンド茶葉。</p>
-      </div>
-    </a>
+            <a class="card" href="./shopping/original/">
+              <div>
+                <h3>プルミフィーユ オリジナルブレンド</h3>
+                <p>香り・味わい・余韻の調和を大切に、当店が設計したオリジナルブレンド茶葉。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/gift/">
-      <div>
-        <h3>ギフト</h3>
-        <p>贈る相手とシーンで選べる、紅茶ギフト。</p>
-      </div>
-    </a>
+            <a class="card" href="./shopping/gift/">
+              <div>
+                <h3>ギフト</h3>
+                <p>贈る相手とシーンで選べる、紅茶ギフト。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/accessory/">
-      <div>
-        <h3>紅茶道具</h3>
-		<p>贈る相手とシーンで選べる、紅茶ギフト。</p>
-      </div>
-    </a>
-  </div>
-</section>
-
+            <a class="card" href="./shopping/accessory/">
+              <div>
+                <h3>紅茶道具</h3>
+              </div>
+              <span class="link">見る</span>
+            </a>
+          </div>
+        </section>
 
       </div><!-- /.section-inner -->
     </div><!-- /.wrap -->
@@ -190,7 +190,7 @@
       </div>
 
       <div class="footer-meta">
-        <div>© PREMIER FEUILLE</div>
+        <div>© Premier Feuille</div>
       </div>
 
       <a href="https://www.instagram.com/premier_feuille/"
@@ -202,53 +202,22 @@
   </footer>
 
   <script>
-(function () {
-  const toggle  = document.querySelector('.menu-toggle');
-  const nav     = document.querySelector('.mobile-nav');
-  const overlay = document.querySelector('.mobile-overlay');
-  const closeBtn = document.querySelector('.mobile-close');
+  (function () {
+    const openBtn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".mobile-nav");
+    const closeBtn = document.querySelector(".menu-close");
 
-  if (!toggle || !nav || !overlay || !closeBtn) return;
+    if (!openBtn || !nav || !closeBtn) return;
 
-  // 初期ARIA（未設定なら付ける）
-  if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-controls', 'mobileNav');
+    openBtn.addEventListener("click", () => nav.classList.add("is-open"));
+    closeBtn.addEventListener("click", () => nav.classList.remove("is-open"));
 
-  function openMenu() {
-    nav.hidden = false;
-    overlay.hidden = false;
-    nav.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    nav.classList.remove('is-open');
-    nav.hidden = true;
-    overlay.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    expanded ? closeMenu() : openMenu();
-  });
-
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  nav.addEventListener('click', (e) => {
-    if (e.target && e.target.tagName === 'A') closeMenu();
-  });
-})();
+    // 背景クリックで閉じる（任意）
+    nav.addEventListener("click", (e) => {
+      if (e.target === nav) nav.classList.remove("is-open");
+    });
+  })();
 </script>
-
-
 
 
 </body>

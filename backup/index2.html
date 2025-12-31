@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Janat（ジャンナッツ）正規取扱、オリジナルブレンド茶葉の紅茶専門店｜PREMIER FEUILLE</title>
-  <meta name="description" content="Premier Feuille（プレミフィーユ）は、ジャンナッツ正規取扱・オリジナル茶葉を量り売りする紅茶専門店です。">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premier Feuille</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- 共通CSS（トップ直下想定） -->
+  <link rel="stylesheet" href="./css/style.site.css" />
 
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="./css/style.site.css">
+  <!-- Janatなど専用CSSが必要なら（トップで不要なら削除OK）
+  <link rel="stylesheet" href="./css/janat.css" />
+  -->
+
 </head>
 
 <body>
@@ -21,14 +20,21 @@
   <header class="site-header">
     <div class="wrap header-inner">
 
-      <button class="menu-toggle" aria-label="メニューを開く" type="button">
+      <!-- hamburger -->
+      <button class="menu-toggle"
+              aria-label="メニューを開く"
+              aria-expanded="false"
+              aria-controls="mobile-nav"
+              type="button">
         <span></span><span></span><span></span>
       </button>
 
+      <!-- logo -->
       <a href="./index.html" class="site-mark" aria-label="トップへ戻る">
         <img src="./images/logo-mark.png" alt="Premier Feuille">
       </a>
 
+      <!-- pc nav -->
       <nav class="site-nav" aria-label="ナビゲーション">
         <a href="/about/">ABOUT</a>
         <a href="/news/">NEWS</a>
@@ -36,41 +42,45 @@
         <a href="/shopping/gift/">GIFT</a>
       </nav>
 
+      <!-- util -->
       <nav class="site-util" aria-label="ユーザーメニュー">
+        <a href="/account/login.html">ログイン</a>
+        <a href="/cart/">カート</a>
+      </nav>
+
+      <!-- mobile overlay + nav（重要：これが無いと“出すもの”が無い） -->
+      <div class="mobile-overlay" hidden></div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <button class="mobile-close" type="button" aria-label="メニューを閉じる">×</button>
+
+        <!-- ロゴをメニュー内で中央に見せたい場合（任意） -->
+        <div class="mobile-logo">
+          <a href="./index.html" class="site-mark" aria-label="トップへ戻る">
+            <img src="./images/logo-mark.png" alt="Premier Feuille">
+          </a>
+        </div>
+
+        <a href="/about/">ABOUT</a>
+        <a href="/news/">NEWS</a>
+        <a href="/shopping/">SHOPPING</a>
+        <a href="/shopping/gift/">GIFT</a>
         <a href="/account/login.html">ログイン</a>
         <a href="/cart/">カート</a>
       </nav>
 
     </div>
   </header>
-  
- <!-- Mobile Menu (overlay + panel) -->
-<div class="mobile-overlay" hidden></div>
 
-<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション" hidden>
-  <button class="mobile-close" type="button" aria-label="メニューを閉じる">×</button>
-
-  <div class="mobile-logo">
-    <img src="./images/logo-mark.png" alt="Premier Feuille">
-  </div>
-
-  <a href="/about/">ABOUT</a>
-  <a href="/news/">NEWS</a>
-  <a href="/shopping/">SHOPPING</a>
-  <a href="/shopping/gift/">GIFT</a>
-  <a href="/account/login.html">ログイン</a>
-  <a href="/cart/">カート</a>
-</nav>
- 
 
   <!-- Main -->
-  <main>
-    <div class="wrap">
+  <main class="wrap">
 
-      <!-- Hero: 店名カード -->
+
+    <!-- Hero: 店名カード -->
       <section class="hero" aria-label="導入">
         <div class="hero__inner">
-          <h1 class="shop-title">香りが強すぎない、フレーバーティーを選んでいます</h1>
+          <h1 class="shop-title">優しい香りのフレーバーティーを選んでいます</h1>
           <p class="shop-note">ジャンナッツ正規取扱／オリジナルブレンド茶葉の量り売り</p>
 
           <div class="brand-block" aria-label="店名">
@@ -136,48 +146,43 @@
 
         <!-- Categories -->
         <section class="section" aria-label="商品カテゴリ">
-  <h2 class="section-title">カテゴリ</h2>
+          <h2 class="section-title">カテゴリ</h2>
 
-  <div class="grid">
-    <a class="card" href="./shopping/janat/">
-      <div>
-        <h3>Janat（ジャンナッツ）</h3>
-        <p>ジャンナッツのフレーバーティーを、シーン別に選びやすく。</p>
-      </div>
-    </a>
+          <div class="grid">
+            <a class="card" href="./shopping/janat/">
+              <div>
+                <h3>Janat（ジャンナッツ）</h3>
+                <p>ジャンナッツのフレーバーティーを、シーン別に選びやすく。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/original/">
-      <div>
-        <h3>プルミフィーユ オリジナルブレンド</h3>
-        <p>香り・味わい・余韻の調和を大切に、当店が設計したオリジナルブレンド茶葉。</p>
-      </div>
-    </a>
+            <a class="card" href="./shopping/original/">
+              <div>
+                <h3>プルミフィーユ オリジナルブレンド</h3>
+                <p>香り・味わい・余韻の調和を大切に、当店が設計したオリジナルブレンド茶葉。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/gift/">
-      <div>
-        <h3>ギフト</h3>
-        <p>贈る相手とシーンで選べる、紅茶ギフト。</p>
-      </div>
-    </a>
+            <a class="card" href="./shopping/gift/">
+              <div>
+                <h3>ギフト</h3>
+                <p>贈る相手とシーンで選べる、紅茶ギフト。</p>
+              </div>
+              <span class="link">見る</span>
+            </a>
 
-    <a class="card" href="./shopping/accessory/">
-      <div>
-        <h3>紅茶道具</h3>
-		<p>贈る相手とシーンで選べる、紅茶ギフト。</p>
-      </div>
-    </a>
-  </div>
-</section>
-
-
-      </div><!-- /.section-inner -->
-    </div><!-- /.wrap -->
-  </main>
-
-  <!-- Footer -->
+            <a class="card" href="./shopping/accessory/">
+              <div>
+                <h3>紅茶道具</h3>
+              </div>
+              <span class="link">見る</span>
+			  </a>
+    </div>
+<!-- Footer -->
   <footer class="site-footer">
     <div class="wrap">
-
       <div class="footer-links" aria-label="フッターリンク">
         <a href="./about/">ABOUT</a>
         <a href="./news/">NEWS</a>
@@ -185,34 +190,30 @@
         <a href="./shopping/gift/">ギフト</a>
         <a href="./access/">アクセス</a>
         <a href="./contact/">お問い合わせ</a>
-        <a href="./policy/">特定商取引法に基づく表記</a>
-        <a href="./about/product/" class="push-right">商品について</a>
+        <a href="./law/">特定商取引法に基づく表記</a>
+        <a href="./about/items/">商品について</a>
       </div>
 
-      <div class="footer-meta">
-        <div>© PREMIER FEUILLE</div>
-      </div>
+      <div class="footer-meta">© Premier Feuille</div>
 
-      <a href="https://www.instagram.com/premier_feuille/"
-         class="footer-instagram"
-         aria-label="Instagram">
+      <a class="footer-instagram"
+         href="https://www.instagram.com/"
+         target="_blank"
+         rel="noopener">
         Instagram
       </a>
     </div>
   </footer>
 
+  <!-- Mobile menu JS（必須：これが無いと開閉しません） -->
   <script>
 (function () {
-  const toggle  = document.querySelector('.menu-toggle');
-  const nav     = document.querySelector('.mobile-nav');
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.mobile-nav');
   const overlay = document.querySelector('.mobile-overlay');
   const closeBtn = document.querySelector('.mobile-close');
 
   if (!toggle || !nav || !overlay || !closeBtn) return;
-
-  // 初期ARIA（未設定なら付ける）
-  if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-controls', 'mobileNav');
 
   function openMenu() {
     nav.hidden = false;
@@ -238,18 +239,48 @@
   closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
 
+  // ESCで閉じる（任意）
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
 
+  // メニュー内リンクを押したら閉じる（任意）
   nav.addEventListener('click', (e) => {
     if (e.target && e.target.tagName === 'A') closeMenu();
   });
 })();
 </script>
 
+<script>
+(() => {
+  const panel = document.getElementById('mobilePanel');
+  const backdrop = document.getElementById('mobileBackdrop');
+  if (!btn || !panel || !backdrop) return;
 
+  const open = () => {
+    document.body.classList.add('is-menu-open');
+    btn.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-hidden', 'false');
+    backdrop.hidden = false;
+  };
 
+  const close = () => {
+    document.body.classList.remove('is-menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+    backdrop.hidden = true;
+  };
+
+  btn.addEventListener('click', () => {
+    document.body.classList.contains('is-menu-open') ? close() : open();
+  });
+
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,130 @@
+商品一覧ページは「この1枚」をコピーしてつかう。
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>（カテゴリ名）｜PREMIER FEUILLE</title>
+  <meta name="description" content="（カテゴリの一行説明）">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- Header（トップと共通） -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-inner">
+
+        <button class="menu-toggle" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a href="../../index.html" class="site-mark">
+          <img src="../../images/logo-mark.png" alt="Premier Feuille">
+        </a>
+
+        <nav class="site-nav">
+          <a href="../../about/">ABOUT</a>
+          <a href="../../news/">NEWS</a>
+          <a href="../../shopping/">商品</a>
+          <a href="../../shopping/gift/">ギフト</a>
+        </nav>
+
+        <nav class="site-util">
+          <a href="../../cart/">カート</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="wrap">
+
+      <!-- ★ カテゴリヘッダー（ここだけ差し替える） -->
+      <header class="category-header">
+        <h1 class="category-title">（カテゴリ名）</h1>
+        <p class="category-lead">（一行説明）</p>
+      </header>
+
+      <!-- ★ 商品一覧 -->
+      <section class="section" aria-label="商品一覧">
+        <div class="grid">
+
+          <!-- 商品カード：これを複製 -->
+          <a class="card" href="#">
+            <div>
+              <h3>商品名</h3>
+              <p>簡潔な説明文（1〜2行）</p>
+            </div>
+            <span class="link">詳細を見る</span>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer（トップと共通） -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="../../about/">ABOUT</a>
+        <a href="../../news/">NEWS</a>
+        <a href="../../shopping/">商品</a>
+        <a href="../../shopping/gift/">ギフト</a>
+        <a href="../../access/">アクセス</a>
+        <a href="../../contact/">お問い合わせ</a>
+        <a href="../../policy/">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-meta">© Premier Feuille</div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+カテゴリ別：差し替え例（そのまま使える）
+<h1 class="category-title">Janat（ジャンナッツ）</h1>
+<p class="category-lead">正規取扱。定番から季節限定まで。</p>
+
+
+この設計が「正解」である理由
+✅ 迷子にならない
+
+h1 は 必ず1つ
+
+ページの役割が明確
+
+✅ CSSを増やさなくていい
+
+すでに grid / card / category-header が完成済み 
+
+style
+
+✅ 量産できる
+
+ファイルをコピー
+
+3行差し替え
+
+商品カードを複製
+
+④ 今後の商品追加ルール（重要）
+
+商品カード1枚に書くのはこれだけ
+
+商品名
+
+1〜2行説明
+
+「詳細を見る」
+
+❌ 価格・g数・原産国は 一覧に出さない
+→ 詳細ページの役割

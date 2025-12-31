@@ -539,7 +539,8 @@ a.btn.primary.hero-media-cta{
     align-items:center;
     gap: 12px;
     /* padding: 14px 0;  ←これも左右0で.wrapを殺す */
-    padding-block: 14px; /* 上下だけ */
+    padding-block: 14px;
+}	/* 上下だけ */
 
   /* hamburger 34x34 : IMPORTANT -> flex column (not grid) */
   .menu-toggle{
@@ -703,14 +704,13 @@ a.btn.primary.hero-media-cta{
   border-radius: 0 !important;
 }
 
-/* hamburger icon: ensure 3 lines not collapsing */
-.menu-toggle{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+.menu-toggle{ display:none; } /* デフォルト(PC)は非表示 */
+
+@media (max-width: 720px){
+  .menu-toggle{ display:flex; }
 }
+
+
 .menu-toggle span{ flex: 0 0 auto; }
 
 /* ===== FIX: mobile menu内のロゴだけ absolute解除 ===== */
@@ -729,8 +729,6 @@ a.btn.primary.hero-media-cta{
 
 /* ===== Category cards: “見る”を押せるUIにする ===== */
 .category-grid .card a{
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -739,6 +737,8 @@ a.btn.primary.hero-media-cta{
   font-weight: 600;
   line-height: 1;
 }
+
+.grid a.card{ text-decoration:none; color:inherit; }
 
 .category-grid .card a:hover{
   background: rgba(0,0,0,0.03);
@@ -797,3 +797,78 @@ a.btn.primary.hero-media-cta{
 }
 
 
+/* =========================================================
+   DESKTOP SAFETY NET (>=721px)
+   PCではモバイル要素を完全に無効化してヘッダー崩れを防ぐ
+   ========================================================= */
+@media (min-width: 721px){
+  .menu-toggle{ display:none !important; }
+  .mobile-overlay,
+  .mobile-nav{ display:none !important; }
+
+  /* モバイルでロゴをabsolute中央寄せしている場合の巻き添え防止 */
+  .site-mark{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+}
+
+/* カード全体リンク（a.card）前提 */
+.grid a.card{
+  transition: box-shadow .18s ease, border-color .18s ease, transform .06s ease, background-color .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* PC: hoverで少しだけ浮かす */
+@media (hover:hover){
+  .grid a.card:hover{
+    border-color: rgba(26,43,60,.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+}
+
+/* スマホ: 押した瞬間（active）に“沈む”＋うっすら面 */
+.grid a.card:active{
+  transform: translateY(1px);
+  background: rgba(26,43,60,.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.grid a.card:focus-visible{
+  outline: 2px solid rgba(26,43,60,.35);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* カテゴリカード（カード全体リンク） */
+.grid a.card{
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .18s ease, border-color .18s ease, transform .06s ease, background-color .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* PC：hoverで少し浮かす */
+@media (hover:hover){
+  .grid a.card:hover{
+    border-color: rgba(26,43,60,.18);
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+    text-decoration: none;
+  }
+}
+
+/* スマホ：押した瞬間に“沈む” */
+.grid a.card:active{
+  transform: translateY(1px);
+  background: rgba(26,43,60,.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+/* キーボード操作（PC）: フォーカスが分かる */
+.grid a.card:focus-visible{
+  outline: 2px solid rgba(26,43,60,.35);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
