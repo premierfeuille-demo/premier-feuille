@@ -12,31 +12,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./css/style.site.css">
   <link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body>
 
-  <!<header class="site-header">
+  <!-- Header（これ1回だけ） -->
+  <header class="site-header">
     <div class="wrap header-inner">
 
       <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
-       <img class="logo-pc" alt="PREMIER FEUILLE"
-     src='data:image/svg+xml;utf8,
+        <img class="logo-pc" alt="PREMIER FEUILLE"
+             src='data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="140">
   <rect width="100%25" height="100%25" fill="%23ffffff"/>
   <text x="20" y="90" font-size="56" font-family="Arial" fill="%231A2B3C">PREMIER FEUILLE</text>
 </svg>'>
 
-       <img class="logo-sp" alt="PREMIER FEUILLE"
-     src='data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120">
+        <img class="logo-sp" alt="PREMIER FEUILLE"
+             src='data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120">
   <rect width="100%25" height="100%25" fill="%23ffffff"/>
   <text x="20" y="78" font-size="44" font-family="Arial" fill="%231A2B3C">PF</text>
 </svg>'>
-
       </a>
 
       <nav class="site-nav" aria-label="ナビゲーション">
@@ -53,6 +53,7 @@
 
     </div>
 
+    <!-- SPカテゴリ常時表示（header内：これ1回だけ） -->
     <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
       <div class="wrap sp-subnav-inner">
         <a href="/premier-feuille/about/">ABOUT</a>
@@ -61,9 +62,7 @@
         <a href="/premier-feuille/shopping/gift/">GIFT</a>
       </div>
     </nav>
-  </header
-  
-
+  </header>
 
   <main>
     <div class="wrap">
@@ -71,7 +70,6 @@
       <!-- Hero -->
       <section class="hero" aria-label="店舗紹介">
         <div class="hero__inner">
-
           <div class="brand-block">
             <span class="brand-en">PREMIER FEUILLE</span>
             <span class="brand-ja">プレミフィーユ</span>
@@ -89,24 +87,19 @@
           <p class="hero-copy">
             一杯目の印象だけでなく、飲み続けたときの心地よさを大切にしています。
           </p>
-
         </div>
       </section>
 
       <!-- Hero media -->
       <section class="hero-media" aria-label="イメージ">
         <div class="hero-media-inner">
-
           <figure class="hero-media-figure">
             <img src="/premier-feuille/images/hero.jpg" alt="紅茶のイメージ">
           </figure>
 
           <p class="hero-media-lead">季節に合わせたおすすめや、香り別の選び方をご案内しています。</p>
 
-          <a class="btn primary hero-media-cta" href="/premier-feuille/shopping/">
-            商品を見る
-          </a>
-
+          <a class="btn primary hero-media-cta" href="/premier-feuille/shopping/">商品を見る</a>
         </div>
       </section>
 
@@ -120,7 +113,6 @@
               <div class="news-date">2025-12-31</div>
               <div class="news-title">トップページを更新しました。</div>
             </li>
-
             <li class="news-item">
               <div class="news-date">2025-12-20</div>
               <div class="news-title">年末年始の営業について。</div>
@@ -130,7 +122,6 @@
           <div style="margin-top:12px;">
             <a class="news-more" href="/premier-feuille/news/">NEWS一覧を見る</a>
           </div>
-
         </div>
       </section>
 
@@ -160,18 +151,15 @@
               <p>ティータイムを整える道具や小物。</p>
             </a>
           </div>
-
         </div>
       </section>
 
-    </div><!-- /.wrap -->
+    </div>
   </main>
-
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap">
-
       <div class="footer-links" aria-label="フッターリンク">
         <a href="/premier-feuille/about/">ABOUT</a>
         <a href="/premier-feuille/news/">NEWS一覧を見る</a>
@@ -187,12 +175,9 @@
         <div>© PREMIER FEUILLE</div>
       </div>
 
-      <a href="https://www.instagram.com/premier_feuille/"
-         class="footer-instagram"
-         aria-label="Instagram">
+      <a href="https://www.instagram.com/premier_feuille/" class="footer-instagram" aria-label="Instagram">
         Instagram
       </a>
-
     </div>
   </footer>
 
