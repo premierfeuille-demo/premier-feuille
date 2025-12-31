@@ -74,4 +74,67 @@
   border-bottom: 1px solid var(--border);
 }
 
-.sp-subnav-inn
+.sp-subnav-inner{
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.sp-subnav a{
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 4px;
+  font-family: var(--font-en);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.sp-subnav a:hover{
+  background: rgba(26,43,60,.06);
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE (<=720px)
+   ========================================================= */
+
+@media (max-width: 720px){
+
+  /* ヘッダー：ロゴ中央＋右に util */
+  .site-header .header-inner{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding-block: 14px;
+  }
+
+  /* PCナビは隠す（カテゴリは sp-subnav に任せる） */
+  .site-header .site-nav{
+    display: none;
+  }
+
+  /* ロゴ中央 */
+  .site-header .site-mark{
+    justify-self: center;
+  }
+
+  /* util右寄せ */
+  .site-header .site-util{
+    justify-self: end;
+    margin-left: 0;
+    white-space: nowrap;
+  }
+
+  .site-header .site-util a{
+    font-size: 13px;
+    padding: 6px 6px;
+  }
+
+  /* SPカテゴリバーを表示 */
+  .sp-subnav{
+    display: block;
+  }
+}
