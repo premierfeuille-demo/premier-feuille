@@ -1,5 +1,5 @@
 /* =========================================================
-   HEADER common
+   HEADER (PC / SP 共通)
    ========================================================= */
 
 .site-header{
@@ -12,40 +12,37 @@
 }
 
 .site-header .header-inner{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 16px;
-  padding-block: 12px;
+  padding-block: 10px;
 }
 
-/* ロゴ（2枚） */
+/* ロゴ（共通） */
 .site-header .site-mark{
   flex: 0 0 auto;
   line-height: 0;
-  display:block;
-  min-width: 0;
+  display: block;
 }
 
-/* ★潰れ防止：他のCSSがwidth:100%を当てても勝つ */
-.site-header .site-mark img{
-  display:block;
+/* 重要：2枚ロゴの切替（必須） */
+.site-header .site-mark img{ display:none; }
+.site-header .site-mark img.logo-pc{ display:block; }
+
+/* PCロゴサイズ */
+.site-header .site-mark img.logo-pc{
   height: 56px;
-  width: auto !important;
-  max-width: 220px;
+  width: auto;
+  max-width: 240px;
 }
-
-/* デフォルトはPCロゴ */
-.site-header .logo-pc{ display:block; }
-.site-header .logo-sp{ display:none; }
 
 /* PCナビ */
 .site-header .site-nav{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 14px;
   margin-left: 12px;
 }
-
 .site-header .site-nav a{
   font-family: var(--font-en);
   font-size: 14px;
@@ -53,45 +50,45 @@
   padding: 6px 8px;
   border-radius: 10px;
 }
-
 .site-header .site-nav a:hover{
   background: rgba(26,43,60,.06);
   text-decoration: none;
 }
 
-/* util */
+/* 右上（ログイン/カート） */
 .site-header .site-util{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
   gap: 10px;
-  white-space: nowrap;
 }
+.site-header .site-util a{ font-size: 14px; }
 
 /* =========================================================
-   SP subnav
+   SP用 カテゴリ常時表示バー（header内）
    ========================================================= */
 
 .sp-subnav{
-  display:none;
+  display: none;
   background: rgba(245,247,248,.96);
   border-top: 1px solid var(--border);
 }
 
 .sp-subnav-inner{
-  display:flex;
+  display: flex;
   justify-content: space-between;
   gap: 6px;
 }
 
 .sp-subnav a{
-  flex:1;
-  text-align:center;
-  font-size: 13px;
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
   padding: 10px 4px;
   font-family: var(--font-en);
   letter-spacing: .04em;
   white-space: nowrap;
+  border-radius: 10px;
 }
 
 .sp-subnav a:hover{
@@ -100,71 +97,50 @@
 }
 
 /* =========================================================
-   Responsive (<=720px)
+   RESPONSIVE (<=720px)
    ========================================================= */
 
 @media (max-width: 720px){
 
-  /* PCナビは隠す／SPバーを出す */
-  .site-header .site-nav{ display:none; }
-  .sp-subnav{ display:block; }
-
-  /* ロゴ切替 */
-  .site-header .logo-pc{ display:none; }
-  .site-header .logo-sp{ display:block; }
-
-  /* SPヘッダー：左上寄せ気味 */
+  /* SPは「左：ロゴ」「右：util」 */
   .site-header .header-inner{
-    align-items:flex-start;
-    padding-top: 4px;
-    padding-bottom: 8px;
+    align-items: flex-start;    /* 左上寄せ */
     gap: 10px;
+    padding-block: 8px;         /* さらに詰める */
   }
 
-  /* SPロゴ：小さく、潰れない */
-  .site-header .site-mark img{
-    height: 34px;
-    width: auto !important;
-    max-width: 140px;
+  /* PCナビは隠す */
+  .site-header .site-nav{ display:none; }
+
+  /* ロゴ：左上固定 */
+  .site-header .site-mark{
+    margin-right: auto;
+    transform: translateY(-1px);
   }
 
+  /* SPはSPロゴだけ表示 */
+  .site-header .site-mark img.logo-pc{ display:none; }
+  .site-header .site-mark img.logo-sp{ display:block; }
+
+  /* SPロゴサイズ：小さめ */
+  .site-header .site-mark img.logo-sp{
+    height: 28px;       /* ここで小さく */
+    width: auto;
+    max-width: 120px;   /* ここで潰れ防止 */
+    display: block;
+  }
+
+  /* util */
   .site-header .site-util{
-    align-items:flex-start;
+    white-space: nowrap;
+    align-items: center;
     gap: 8px;
   }
-
   .site-header .site-util a{
-    font-size: 12px;
-    padding: 4px 4px;
+    font-size: 13px;
+    padding: 6px 6px;
   }
 
-  /* =========================================================
-   LOGO SWITCH (hard override)
-   ========================================================= */
-
-/* 2枚とも一旦非表示にして、欲しい方だけ表示する */
-.site-header .site-mark img{ display:none !important; }
-
-/* PCではPCロゴだけ */
-.site-header .site-mark img.logo-pc{ display:block !important; }
-
-/* SPではSPロゴだけ */
-@media (max-width: 720px){
-  .site-header .site-mark img.logo-pc{ display:none !important; }
-  .site-header .site-mark img.logo-sp{ display:block !important; }
+  /* SPカテゴリバー表示 */
+  .sp-subnav{ display:block; }
 }
-
-/* サイズ（潰れ防止） */
-.site-header .site-mark img{
-  width: auto !important;
-  height: 56px;
-  max-width: 220px;
-}
-
-@media (max-width: 720px){
-  .site-header .site-mark img{
-    height: 34px;
-    max-width: 140px;
-  }
-}
- 
