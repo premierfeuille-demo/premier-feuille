@@ -18,21 +18,26 @@
   padding-block: 12px;
 }
 
-/* ロゴ */
+/* ロゴ（2枚内包して切替） */
 .site-header .site-mark{
   flex: 0 0 auto;
   line-height: 0;
-  min-width: 0; /* safety */
-}
-
-.site-header .site-mark img{
-  height: 56px;
-  width: auto;
-  max-width: 220px;
   display: block;
 }
 
-/* PCナビ（カテゴリ） */
+/* 画像の共通ルール */
+.site-header .site-mark img{
+  display: block;
+  width: auto;
+  height: 56px;      /* PC基準 */
+  max-width: 220px;  /* 念のため */
+}
+
+/* デフォルトはPC用を表示 */
+.site-header .site-mark .logo-pc{ display: block; }
+.site-header .site-mark .logo-sp{ display: none; }
+
+/* PCナビ */
 .site-header .site-nav{
   display: flex;
   align-items: center;
@@ -53,7 +58,7 @@
   text-decoration: none;
 }
 
-/* 右上（ログイン / カート） */
+/* 右上（ログイン/カート） */
 .site-header .site-util{
   margin-left: auto;
   display: flex;
@@ -65,7 +70,6 @@
 .site-header .site-util a{
   font-size: 14px;
 }
-
 
 /* =========================================================
    SP用 カテゴリ常時表示バー（header直下）
@@ -98,46 +102,37 @@
   text-decoration: none;
 }
 
-
 /* =========================================================
    RESPONSIVE (<=720px)
    ========================================================= */
+
 @media (max-width: 720px){
 
-  /* PCナビは隠す */
-  .site-header .site-nav{ display:none; }
+  /* PCナビは隠す（カテゴリは sp-subnav） */
+  .site-header .site-nav{ display: none; }
+  .sp-subnav{ display: block; }
 
-  /* ヘッダー全体：左余白を極小・上詰め */
-  .site-header .wrap.header-inner{
-    padding-left: 6px;    /* ← さらに左へ */
-    padding-right: 8px;
-  }
-
+  /* ヘッダー：左上寄せ気味にする（必要なら微調整） */
   .site-header .header-inner{
     align-items: flex-start;
-    gap: 8px;
-    padding-top: 4px;     /* ← かなり上 */
+    gap: 10px;
+    padding-top: 4px;
     padding-bottom: 8px;
   }
 
-  /* ロゴ：完全に左固定 */
-  .site-header .site-mark{
-    margin-right: auto;
-    line-height: 0;
-  }
+  /* ロゴ切替：SP用を表示 */
+  .site-header .site-mark .logo-pc{ display: none; }
+  .site-header .site-mark .logo-sp{ display: block; }
 
-  /* ★ロゴをさらに小さく */
+  /* SP用ロゴサイズ（ここが一番効く） */
   .site-header .site-mark img{
-    height: 36px;         /* ← ここが肝（40→36） */
-    max-width: 140px;     /* ← 横も締める */
-    width: auto;
-    display: block;
+    height: 34px;      /* 好みで 32〜40 */
+    max-width: 140px;  /* 好みで調整 */
   }
 
-  /* util：右上にコンパクト */
+  /* utilを右上に */
   .site-header .site-util{
     margin-left: auto;
-    white-space: nowrap;
     align-items: flex-start;
     gap: 8px;
   }
@@ -146,9 +141,4 @@
     font-size: 12px;
     padding: 4px 4px;
   }
-
-  /* SPカテゴリバー表示 */
-  .sp-subnav{ display:block; }
 }
-
-
