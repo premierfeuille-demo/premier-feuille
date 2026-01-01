@@ -1,0 +1,177 @@
+/* =========================================================
+   Janat category specific styles
+   File: /css/janat.css
+   ========================================================= */
+
+/* ------------------------------
+   共通スコープ
+------------------------------ */
+.janat-page {
+  --janat-accent: var(--accent);
+  --janat-muted: var(--muted);
+  --janat-border: var(--border);
+}
+
+/* ------------------------------
+   ページ導入文
+------------------------------ */
+.janat-lead {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text);
+}
+
+/* ------------------------------
+   大分類（茶葉 / ティーバッグ）
+------------------------------ */
+.janat-main-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 40px 0 60px;
+}
+
+@media (max-width: 768px) {
+  .janat-main-categories {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.janat-main-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px 30px;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.janat-main-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.janat-main-card h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  letter-spacing: .05em;
+}
+
+.janat-main-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.janat-main-card a {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+
+.janat-main-card a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ------------------------------
+   フレーバー系統カード
+------------------------------ */
+.janat-flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 40px 0;
+}
+
+@media (max-width: 1024px) {
+  .janat-flavor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .janat-flavor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.janat-flavor-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px 18px 24px;
+  transition: box-shadow .2s ease;
+}
+
+.janat-flavor-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.janat-flavor-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.janat-flavor-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   商品一覧カード（Janat専用微調整）
+------------------------------ */
+.janat-products .product-card {
+  border-radius: var(--radius);
+}
+
+.janat-products .product-title {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.janat-products .product-price {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ------------------------------
+   在庫ステータス（任意）
+------------------------------ */
+.janat-stock {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+.janat-stock.is-in {
+  background: rgba(0,0,0,.04);
+  color: var(--text);
+}
+
+.janat-stock.is-out {
+  background: rgba(0,0,0,.08);
+  color: var(--muted);
+}
+
+/* ------------------------------
+   注記・補足
+------------------------------ */
+.janat-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 30px;
+}

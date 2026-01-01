@@ -1,0 +1,201 @@
+<<<<<<< HEAD
+/* =========================
+   HEADER common
+   ========================= */
+=======
+/* =========================================================
+   HEADER common
+   ========================================================= */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245,247,248,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .header-inner{
+  display:flex;
+  align-items:center;
+  gap: 16px;
+  padding-block: 12px;
+}
+
+<<<<<<< HEAD
+/* ロゴ：2枚入れて切替 */
+=======
+/* ロゴ（2枚） */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+.site-header .site-mark{
+  flex: 0 0 auto;
+  line-height: 0;
+  display:block;
+  min-width: 0;
+}
+
+<<<<<<< HEAD
+/* ★潰れ防止の核：幅はautoを強制（他CSSに勝つ） */
+=======
+/* ★潰れ防止：他のCSSがwidth:100%を当てても勝つ */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+.site-header .site-mark img{
+  display:block;
+  height: 56px;
+  width: auto !important;
+  max-width: 220px;
+}
+
+<<<<<<< HEAD
+.site-header .logo-pc{ display:block; }
+.site-header .logo-sp{ display:none; }
+
+=======
+/* デフォルトはPCロゴ */
+.site-header .logo-pc{ display:block; }
+.site-header .logo-sp{ display:none; }
+
+/* PCナビ */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+.site-header .site-nav{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin-left: 12px;
+}
+
+.site-header .site-nav a{
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.site-header .site-nav a:hover{
+  background: rgba(26,43,60,.06);
+  text-decoration: none;
+}
+
+<<<<<<< HEAD
+=======
+/* util */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+.site-header .site-util{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+<<<<<<< HEAD
+/* =========================
+   SP subnav bar
+   ========================= */
+=======
+/* =========================================================
+   SP subnav
+   ========================================================= */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+
+.sp-subnav{
+  display:none;
+  background: rgba(245,247,248,.96);
+  border-top: 1px solid var(--border);
+}
+
+.sp-subnav-inner{
+  display:flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.sp-subnav a{
+  flex:1;
+  text-align:center;
+  font-size: 13px;
+  padding: 10px 4px;
+  font-family: var(--font-en);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+<<<<<<< HEAD
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 720px){
+
+  /* ★二重防止：PCナビは必ず消す */
+  .site-header .site-nav{ display:none; }
+
+  /* SPカテゴリバーを出す */
+  .sp-subnav{ display:block; }
+
+  /* ロゴはSP用に切替 */
+  .site-header .logo-pc{ display:none; }
+  .site-header .logo-sp{ display:block; }
+
+  /* ロゴを左上・小さく（SP） */
+=======
+.sp-subnav a:hover{
+  background: rgba(26,43,60,.06);
+  text-decoration: none;
+}
+
+/* =========================================================
+   Responsive (<=720px)
+   ========================================================= */
+
+@media (max-width: 720px){
+
+  /* PCナビは隠す／SPバーを出す */
+  .site-header .site-nav{ display:none; }
+  .sp-subnav{ display:block; }
+
+  /* ロゴ切替 */
+  .site-header .logo-pc{ display:none; }
+  .site-header .logo-sp{ display:block; }
+
+  /* SPヘッダー：左上寄せ気味 */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+  .site-header .header-inner{
+    align-items:flex-start;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    gap: 10px;
+  }
+
+<<<<<<< HEAD
+=======
+  /* SPロゴ：小さく、潰れない */
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
+  .site-header .site-mark img{
+    height: 34px;
+    width: auto !important;
+    max-width: 140px;
+  }
+
+  .site-header .site-util{
+    align-items:flex-start;
+    gap: 8px;
+  }
+
+  .site-header .site-util a{
+    font-size: 12px;
+    padding: 4px 4px;
+  }
+}
+<<<<<<< HEAD
+
+/* ★保険：狭いPC/タブレットでも切れない（任意） */
+@media (max-width: 980px){
+  .site-header .site-nav{ display:none; }
+  .sp-subnav{ display:block; }
+}
+=======
+>>>>>>> a6cffbd (Add header.css (remove hamburger, add sp subnav))
