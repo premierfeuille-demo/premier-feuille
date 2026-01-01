@@ -1,5 +1,5 @@
 /* =========================================================
-   HEADER (PC / SP 共通)
+   Header only
    ========================================================= */
 
 .site-header{
@@ -11,136 +11,21 @@
   border-bottom: 1px solid var(--border);
 }
 
+/* ヘッダー上段 */
 .site-header .header-inner{
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
   gap: 16px;
-  padding-block: 10px;
+  padding-block: 12px;
 }
 
-/* ロゴ（共通） */
+/* すべてのリンク下線を確実に消す（環境差防止） */
+.site-header a,
+.sp-subnav a{
+  text-decoration: none;
+}
+
+/* ロゴ（2枚切替） */
 .site-header .site-mark{
   flex: 0 0 auto;
-  line-height: 0;
-  display: block;
-}
-
-/* 重要：2枚ロゴの切替（必須） */
-.site-header .site-mark img{ display:none; }
-.site-header .site-mark img.logo-pc{ display:block; }
-
-/* PCロゴサイズ */
-.site-header .site-mark img.logo-pc{
-  height: 56px;
-  width: auto;
-  max-width: 240px;
-}
-
-/* PCナビ */
-.site-header .site-nav{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-left: 12px;
-}
-.site-header .site-nav a{
-  font-family: var(--font-en);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 10px;
-}
-.site-header .site-nav a:hover{
-  background: rgba(26,43,60,.06);
-  text-decoration: none;
-}
-
-/* 右上（ログイン/カート） */
-.site-header .site-util{
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.site-header .site-util a{ font-size: 14px; }
-
-/* =========================================================
-   SP用 カテゴリ常時表示バー（header内）
-   ========================================================= */
-
-.sp-subnav{
-  display: none;
-  background: rgba(245,247,248,.96);
-  border-top: 1px solid var(--border);
-}
-
-.sp-subnav-inner{
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-}
-
-.sp-subnav a{
-  flex: 1;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px 4px;
-  font-family: var(--font-en);
-  letter-spacing: .04em;
-  white-space: nowrap;
-  border-radius: 10px;
-}
-
-.sp-subnav a:hover{
-  background: rgba(26,43,60,.06);
-  text-decoration: none;
-}
-
-/* =========================================================
-   RESPONSIVE (<=720px)
-   ========================================================= */
-
-@media (max-width: 720px){
-
-  /* SPは「左：ロゴ」「右：util」 */
-  .site-header .header-inner{
-    align-items: flex-start;    /* 左上寄せ */
-    gap: 10px;
-    padding-block: 8px;         /* さらに詰める */
-  }
-
-  /* PCナビは隠す */
-  .site-header .site-nav{ display:none; }
-
-  /* ロゴ：左上固定 */
-  .site-header .site-mark{
-    margin-right: auto;
-    transform: translateY(-1px);
-  }
-
-  /* SPはSPロゴだけ表示 */
-  .site-header .site-mark img.logo-pc{ display:none; }
-  .site-header .site-mark img.logo-sp{ display:block; }
-
-  /* SPロゴサイズ：小さめ */
-  .site-header .site-mark img.logo-sp{
-    height: 28px;       /* ここで小さく */
-    width: auto;
-    max-width: 120px;   /* ここで潰れ防止 */
-    display: block;
-  }
-
-  /* util */
-  .site-header .site-util{
-    white-space: nowrap;
-    align-items: center;
-    gap: 8px;
-  }
-  .site-header .site-util a{
-    font-size: 13px;
-    padding: 6px 6px;
-  }
-
-  /* SPカテゴリバー表示 */
-  .sp-subnav{ display:block; }
-}
+  line-h
