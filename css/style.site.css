@@ -175,15 +175,7 @@ main{ padding: 18px 0 34px; }
     background: var(--ink);
   }
 
-  .site-mark img{
-    display: block;
-    max-height: 56px;
-    width: auto;
-    max-width: 210px;
-    object-fit: contain;
-  }
-
-  .site-mark{ line-height: 0; }
+   .site-mark{ line-height: 0; }
 
   .site-util{
     margin-left:auto;
@@ -198,12 +190,14 @@ main{ padding: 18px 0 34px; }
   }
 }
 
-/* Mobile menu */
+/* Mobile menu（JS未実装なら初期は完全に消す） */
 .mobile-overlay{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.18);
   z-index: 999;
+
+  display: none; /* ←追加 */
 }
 
 .mobile-nav{
@@ -212,44 +206,36 @@ main{ padding: 18px 0 34px; }
   z-index: 1000;
   background: var(--bg);
   padding: 18px;
-  display:flex;
+
+  display: none; /* ←追加：JS入れるまで消す */
   flex-direction: column;
   gap: 12px;
-  transform: translateX(100%);
+}
+
+/* 開いたときだけ表示（JSで is-open を付与する前提） */
+.mobile-overlay.is-open{ display:block; }
+.mobile-nav.is-open{ display:flex; }
+
+  transform: translateX(105%); /* ← 端残り防止 */
+  pointer-events: none;
   transition: transform .22s ease;
 }
 
-.mobile-nav.is-open{ transform: translateX(0); }
-
-.mobile-logo{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding: 14px 10px 6px;
+.mobile-overlay.is-open{
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.mobile-logo img{
-  height: 56px;
-  width:auto;
-  max-width: 240px;
-  object-fit: contain;
+.mobile-nav.is-open{
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-.mobile-nav a{
-  display:block;
-  background:#fff;
-  border: 1px solid rgba(26,43,60,.12);
-  border-radius: 16px;
-  padding: 18px 16px;
-  color: var(--ink);
-  font-weight: 600;
-  letter-spacing: .02em;
-  text-decoration:none;
+/* PCではモバイルメニュー自体を無効化 */
+@media (min-width: 721px){
+  .mobile-overlay,
+  .mobile-nav{
+    display:none !important;
+  }
 }
 
-.menu-toggle:focus{ outline:none; }
-.menu-toggle:focus-visible{
-  outline: 2px solid rgba(26,43,60,.35);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
