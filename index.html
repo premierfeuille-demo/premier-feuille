@@ -13,10 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/premier-feuille/css/design.lock.css">
-  <link rel="stylesheet" href="premier-feuille/css/style.site.css">
-  <link rel="stylesheet" href="/premier-feuille/css/janat.css">
-
+  <link rel="stylesheet" href="/premier-feuille/css/style.site.css">
+  <link rel="stylesheet" href="/premier-feuille/css/header.css">
 </head>
 
 <body>
@@ -25,10 +23,13 @@
   <header class="site-header">
     <div class="wrap header-inner">
 
-      <a href="/premier-feuille/index.html" class="site-mark" aria-label="トップへ戻る">
-        <img class="logo-pc" src="/premier-feuille/images/logo-pc.png" alt="PREMIER FEUILLE">
-        <img class="logo-sp" src="/premier-feuille/images/logo-sp.png" alt="PREMIER FEUILLE">
-      </a>
+      <a class="site-mark" href="/">
+  <picture>
+    <source media="(max-width: 768px)" srcset="/images/logo-sp.png">
+    <img src="/images/logo-pc.png" alt="PREMIER FEUILLE" width="170" height="38">
+  </picture>
+</a>
+
 
       <nav class="site-nav" aria-label="ナビゲーション">
         <a href="/premier-feuille/about/">ABOUT</a>
@@ -54,7 +55,6 @@
       </div>
     </nav>
   </header>
-
 
   <main>
     <div class="wrap">
@@ -87,105 +87,3 @@
       <!-- Hero media -->
       <section class="hero-media" aria-label="イメージ">
         <div class="hero-media-inner">
-
-          <figure class="hero-media-figure">
-            <img src="/premier-feuille/images/hero.jpg" alt="紅茶のイメージ">
-          </figure>
-
-          <p class="hero-media-lead">季節に合わせたおすすめや、香り別の選び方をご案内しています。</p>
-
-          <a class="btn primary hero-media-cta" href="/premier-feuille/shopping/">
-            商品を見る
-          </a>
-
-        </div>
-      </section>
-
-      <!-- NEWS -->
-      <section class="section" aria-label="NEWS">
-        <div class="section-inner">
-          <h2 class="section-title">NEWS</h2>
-
-          <ul class="news-list">
-            <li class="news-item">
-              <div class="news-date">2025-12-31</div>
-              <div class="news-title">トップページを更新しました。</div>
-            </li>
-
-            <li class="news-item">
-              <div class="news-date">2025-12-20</div>
-              <div class="news-title">年末年始の営業について。</div>
-            </li>
-          </ul>
-
-          <div style="margin-top:12px;">
-            <a class="news-more" href="/premier-feuille/news/">NEWS一覧を見る</a>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- CATEGORY -->
-      <section class="section" aria-label="カテゴリ">
-        <div class="section-inner">
-          <h2 class="section-title">CATEGORY</h2>
-
-          <div class="grid category-grid">
-            <a class="card" href="/premier-feuille/shopping/janat/">
-              <h3>Janat</h3>
-              <p>フレーバー系を中心に、香りの系統別にご案内します。</p>
-            </a>
-
-            <a class="card" href="/premier-feuille/shopping/original/">
-              <h3>オリジナルブレンド</h3>
-              <p>香り・味わい・余韻の調和を大切に設計した茶葉。</p>
-            </a>
-
-            <a class="card" href="/premier-feuille/shopping/gift/">
-              <h3>ギフト</h3>
-              <p>贈り物向けの組み合わせや、季節の提案。</p>
-            </a>
-
-            <a class="card" href="/premier-feuille/shopping/accessories/">
-              <h3>アクセサリー</h3>
-              <p>ティータイムを整える道具や小物。</p>
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-    </div><!-- /.wrap -->
-  </main>
-
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap">
-
-      <div class="footer-links" aria-label="フッターリンク">
-        <a href="/premier-feuille/about/">ABOUT</a>
-        <a href="/premier-feuille/news/">NEWS一覧を見る</a>
-        <a href="/premier-feuille/shopping/">商品</a>
-        <a href="/premier-feuille/shopping/gift/">ギフト</a>
-        <a href="/premier-feuille/access/">アクセス</a>
-        <a href="/premier-feuille/contact/">お問い合わせ</a>
-        <a href="/premier-feuille/policy/">特定商取引法に基づく表記</a>
-        <a href="/premier-feuille/about/product/">商品について</a>
-      </div>
-
-      <div class="footer-meta">
-        <div>© PREMIER FEUILLE</div>
-      </div>
-
-      <a href="https://www.instagram.com/premier_feuille/"
-         class="footer-instagram"
-         aria-label="Instagram">
-        Instagram
-      </a>
-
-    </div>
-  </footer>
-
-</body>
-</html>
