@@ -25,7 +25,9 @@
   text-decoration: none;
 }
 
-/* ロゴ（2枚切替） */
-.site-header .site-mark{
-  flex: 0 0 auto;
-  line-h
+.site-header .site-mark img{
+  display:block;
+  width:170px;
+  height:auto; /* 高さ固定はやめるのが安全 */
+}
+
