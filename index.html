@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Janat（ジャンナッツ）正規取扱、オリジナルブレンド茶葉の紅茶専門店｜PREMIER FEUILLE</title>
   <meta name="description" content="Premier Feuille（プレミフィーユ）は、ジャンナッツ正規取扱・オリジナル茶葉を量り売りする紅茶専門店です。">
 
@@ -13,78 +12,255 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/premier-feuille/css/style.site.css">
-  <link rel="stylesheet" href="/premier-feuille/css/header.css">
+  <link rel="stylesheet" href="./css/style.site.css">
 </head>
 
 <body>
 
-  <!-- Header（これ1回だけ） -->
-  <header class="site-header">
-    <div class="wrap header-inner">
+ <!-- Header -->
+<header class="site-header">
 
-      <a class="site-mark" href="/premier-feuille/">
-  <picture>
-    <source media="(max-width: 768px)" srcset="/premier-feuille/images/logo-sp.png">
-    <img src="/premier-feuille/images/logo-pc.png" alt="PREMIER FEUILLE" width="170" height="38">
-  </picture>
+  <!-- ハンバーガーメニュー用ヘッダー（空でOK：CSS/JS制御用） -->
+  <div class="drawer-header">
+    <!-- 今は中身なしでOK -->
+  </div>
+
+  <div class="wrap header-inner">
+
+    <button class="menu-toggle"
+            aria-label="メニューを開く"
+            type="button">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- 通常ヘッダー用ロゴ（これ1つだけ） -->
+    <a href="./index.html"
+       class="site-mark"
+       aria-label="トップへ戻る">
+      <img src="./images/logo-mark.png"
+           alt="PREMIER FEUILLE">
+    </a>
+
+    <nav class="site-nav" aria-label="ナビゲーション">
+      <a href="./about/">ABOUT</a>
+      <a href="./news/">NEWS</a>
+      <a href="./shopping/">SHOPPING</a>
+      <a href="./shopping/gift/">GIFT</a>
+    </nav>
+
+    <nav class="site-util" aria-label="ユーザーメニュー">
+      <a href="./account/login.html">ログイン</a>
+      <a href="./cart/">カート</a>
+    </nav>
+
+  </div>
+</header>
+
+  
+ <!-- Mobile Menu (overlay + panel) -->
+<div class="mobile-overlay" hidden></div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション" hidden>
+  <button class="mobile-close" type="button" aria-label="メニューを閉じる">×</button>
+
+  <div class="mobile-logo">
+  <a href="./">
+  <img src="./images/logo-sp.png" alt="Premier Feuille">
 </a>
 
+  </div>
 
+  <a href="./about/">ABOUT</a>
+  <a href="./news/">NEWS</a>
+  <a href="./shopping/">SHOPPING</a>
+  <a href="./shopping/gift/">GIFT</a>
+  <a href="./account/login.html">ログイン</a>
+  <a href="./cart/">カート</a>
+</nav>
+ 
 
-      <nav class="site-nav" aria-label="ナビゲーション">
-        <a href="/premier-feuille/about/">ABOUT</a>
-        <a href="/premier-feuille/news/">NEWS</a>
-        <a href="/premier-feuille/shopping/">SHOPPING</a>
-        <a href="/premier-feuille/shopping/gift/">GIFT</a>
-      </nav>
-
-      <nav class="site-util" aria-label="ユーザーメニュー">
-        <a href="/premier-feuille/account/login.html">ログイン</a>
-        <a href="/premier-feuille/cart/">カート</a>
-      </nav>
-
-    </div>
-
-    <!-- SPカテゴリ常時表示（header内：これ1回だけ） -->
-    <nav class="sp-subnav" aria-label="スマホ用カテゴリ">
-      <div class="wrap sp-subnav-inner">
-        <a href="/premier-feuille/about/">ABOUT</a>
-        <a href="/premier-feuille/news/">NEWS</a>
-        <a href="/premier-feuille/shopping/">SHOPPING</a>
-        <a href="/premier-feuille/shopping/gift/">GIFT</a>
-      </div>
-    </nav>
-  </header>
-
+  <!-- Main -->
   <main>
     <div class="wrap">
 
-      <!-- Hero -->
-      <section class="hero" aria-label="店舗紹介">
+      <!-- Hero: 店名カード -->
+      <section class="hero" aria-label="導入">
         <div class="hero__inner">
+          <h1 class="shop-title">優しい香りのフレーバーティーを選んでいます</h1>
+          <p class="shop-note">ジャンナッツ正規取扱／オリジナルブレンド茶葉の量り売り</p>
 
-          <div class="brand-block">
-            <span class="brand-en">PREMIER FEUILLE</span>
-            <span class="brand-ja">プレミフィーユ</span>
+          <div class="brand-block" aria-label="店名">
+            <div class="brand-en">PREMIER</div>
+            <div class="brand-en">FEUILLE</div>
+            <div class="brand-ja">プルミフィーユ</div>
           </div>
 
-          <h1 class="shop-title">
-            Janat（ジャンナッツ）正規取扱、<br>
-            オリジナルブレンド茶葉の紅茶専門店
-          </h1>
-
-          <p class="shop-note">
-            量り売り茶葉（50g / 100g）を中心に、香りと飲み心地の調和を大切にご案内します。
-          </p>
-
           <p class="hero-copy">
-            一杯目の印象だけでなく、飲み続けたときの心地よさを大切にしています。
+            ジャンナッツを中心に、飲み続けたときの心地よさを大切にした紅茶をご紹介しています。
           </p>
 
+          <div class="hero-actions">
+            <a class="hero-link" href="./shopping/">カテゴリから探す</a>
+            <span class="hero-sep">／</span>
+            <a class="hero-link" href="./shopping/janat/">Janatを見る</a>
+          </div>
         </div>
       </section>
 
-      <!-- Hero media -->
+      <!-- Hero photo: 写真カード -->
       <section class="hero-media" aria-label="イメージ">
         <div class="hero-media-inner">
+          <figure class="hero-media-figure">
+          </figure>
+
+          <p class="hero-media-lead">
+            紅茶は「香り」で選ぶのがおすすめです。まずはカテゴリからどうぞ。
+          </p>
+
+          <a class="btn primary hero-media-cta" href="./shopping/">カテゴリを見る</a>
+        </div>
+      </section>
+
+      <div class="section-inner">
+
+        <!-- News -->
+        <section class="section" aria-label="新着情報">
+          <h2 class="section-title">NEWS</h2>
+
+          <div class="news">
+            <ul class="news-list">
+              <li class="news-item">
+                <span class="news-date">2025-12-19</span>
+                <a class="news-title" href="/news/">トップページを更新しました。</a>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2025-12-10</span>
+                <a class="news-title" href="/news/">季節限定商品の入荷情報を掲載しました。</a>
+              </li>
+              <li class="news-item">
+                <span class="news-date">2025-12-01</span>
+                <a class="news-title" href="/news/">年末年始の営業について。</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="news-more">
+            <a href="./news/">NEWS一覧を見る</a>
+          </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section" aria-label="商品カテゴリ">
+  <h2 class="section-title">カテゴリ</h2>
+
+  <div class="grid">
+    <a class="card" href="./shopping/janat/">
+      <div>
+        <h3>Janat（ジャンナッツ）</h3>
+        <p>ジャンナッツのフレーバーティーを、香り別に選びやすく。</p>
+      </div>
+    </a>
+
+    <a class="card" href="./shopping/original/">
+      <div>
+        <h3>プルミフィーユ オリジナルブレンド</h3>
+        <p>香り・味わい・余韻の調和を大切に、当店が独自設計したオリジナルブレンド茶葉。</p>
+      </div>
+    </a>
+
+    <a class="card" href="./shopping/gift/">
+      <div>
+        <h3>ギフト</h3>
+        <p>贈る相手とシーンで選べる、紅茶ギフト。</p>
+      </div>
+    </a>
+
+    <a class="card" href="./shopping/accessory/">
+      <div>
+        <h3>紅茶道具</h3>
+		<p>オリジナル缶、ティーコージー、メジャー等</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+      </div><!-- /.section-inner -->
+    </div><!-- /.wrap -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+
+      <div class="footer-links" aria-label="フッターリンク">
+        <a href="./about/">ABOUT</a>
+		<a href="./news/">NEWS一覧を見る</a>
+		<a href="./shopping/">商品</a>
+		<a href="./shopping/gift/">ギフト</a>
+		<a href="./access/">アクセス</a>
+		<a href="./contact/">お問い合わせ</a>
+		<a href="./policy/">特定商取引法に基づく表記</a>
+		<a href="./about/product/" class="push-right">商品について</a>
+      </div>
+
+      <div class="footer-meta">
+        <div>© PREMIER FEUILLE</div>
+      </div>
+
+      <a href="https://www.instagram.com/premier_feuille/"
+         class="footer-instagram"
+         aria-label="Instagram">
+        Instagram
+      </a>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  const toggle  = document.querySelector('.menu-toggle');
+  const nav     = document.querySelector('.mobile-nav');
+  const overlay = document.querySelector('.mobile-overlay');
+  const closeBtn = document.querySelector('.mobile-close');
+
+  if (!toggle || !nav || !overlay || !closeBtn) return;
+
+  // 初期ARIA（未設定なら付ける）
+  if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mobileNav');
+
+  function openMenu() {
+    nav.hidden = false;
+    overlay.hidden = false;
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    nav.hidden = true;
+    overlay.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    expanded ? closeMenu() : openMenu();
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  nav.addEventListener('click', (e) => {
+    if (e.target && e.target.tagName === 'A') closeMenu();
+  });
+})();
+</script>
+</body>
+</html>
